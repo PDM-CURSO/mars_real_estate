@@ -1,4 +1,4 @@
-# App Real State Mars
+# App Real Estate Mars
 
 App para practicar:
  - Manejo de estados con BLoC
