@@ -21,3 +21,6 @@ flutter packages get
 <img src="screenshot/Capture0.png" width="240" height="480" />
 <img src="screenshot/Capture1.png" width="240" height="480" />
 <img src="screenshot/Capture2.png" width="240" height="480" />
+
+Original app extracted from Get data from the internet Android developers code lab
+https://developer.android.com/codelabs/basic-android-kotlin-compose-getting-data-internet#1 

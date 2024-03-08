@@ -16,50 +16,19 @@ class RealEstateBloc extends Bloc<RealEstateEvent, RealEstateState> {
   String _realEstateEndpoint =
       "https://android-kotlin-fun-mars-server.appspot.com/realestate";
   List<Land> _realEstateList = [];
-  List<Land> _realEstateFilteredList = [];
-  List<Land> _realEstateForSaleList = [];
-  List<Land> _realEstateForRentList = [];
 
   RealEstateBloc() : super(RealEstateInitial()) {
     on<GetAllLandEvent>((event, emit) async {
-      emit(LoadingState());
-      if (await _getRealEstate())
-        emit(SearchSuccessState(realEstateList: _realEstateList));
-      else
-        emit(ErrorState());
+      // TODO: implement method
     });
     on<GetLandForSaleEvent>((event, emit) async {
-      emit(LoadingState());
-      if (_realEstateList.length == 0) {
-        if (await _getRealEstate()) {
-          _filterForSale();
-          emit(SearchSuccessState(realEstateList: _realEstateForSaleList));
-        } else
-          emit(ErrorState());
-      } else {
-        _filterForSale();
-        emit(SearchSuccessState(realEstateList: _realEstateForSaleList));
-      }
+      // TODO: implement method
     });
     on<GetLandForRentEvent>((event, emit) async {
-      emit(LoadingState());
-      if (_realEstateList.length == 0) {
-        if (await _getRealEstate()) {
-          _filterForRent();
-          emit(SearchSuccessState(realEstateList: _realEstateForRentList));
-        } else
-          emit(ErrorState());
-      } else {
-        _filterForRent();
-        emit(SearchSuccessState(realEstateList: _realEstateForRentList));
-      }
+      // TODO: implement method
     });
     on<GetSearchResultsEvent>((event, emit) async {
-      if (_searchController.text != "") {
-        emit(LoadingState());
-        _searchFilter();
-        emit(SearchSuccessState(realEstateList: _realEstateFilteredList));
-      }
+      // TODO: implement method
     });
     on<ClearSearchFieldEvent>((event, emit) {
       _clearSearchField();
@@ -67,21 +36,15 @@ class RealEstateBloc extends Bloc<RealEstateEvent, RealEstateState> {
     });
   }
   void _filterForRent() async {
-    _realEstateForRentList =
-        _realEstateList.where((land) => land.type == "rent").toList();
+    // TODO: implement method
   }
 
   void _filterForSale() {
-    _realEstateForSaleList =
-        _realEstateList.where((land) => land.type == "buy").toList();
+    // TODO: implement method
   }
 
   void _searchFilter() {
-    _realEstateFilteredList = _realEstateList.where((land) {
-      return (land.id!.contains(_searchController.text) ||
-          land.price!.toString().contains(_searchController.text) ||
-          land.type!.contains(_searchController.text));
-    }).toList();
+    // TODO: implement method
   }
 
   Future<bool> _getRealEstate() async {

@@ -11,21 +11,8 @@ class RealEstateContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<RealEstateBloc, RealEstateState>(
-      builder: (context, state) {
-        if (state is LoadingState) {
-          return _loadingStateWidget();
-        } else if (state is NotFoundState) {
-          return _notFoundStateWidget();
-        } else if (state is ErrorState) {
-          return _errorStateWidget();
-        } else if (state is SearchSuccessState) {
-          return _searchResultsStateWidget(state.realEstateList);
-        } else {
-          return _defaultStateWidget();
-        }
-      },
-    );
+    // TODO: agregar BLoC builder
+    return Container();
   }
 
   Widget _defaultStateWidget() {

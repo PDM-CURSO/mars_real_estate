@@ -15,22 +15,21 @@ class TopFilter extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           TextFormField(
-            controller: BlocProvider.of<RealEstateBloc>(context).getSearchCtrl,
+            // TODO: descomentar eso:
+            // controller: BlocProvider.of<RealEstateBloc>(context).getSearchCtrl,
             decoration: InputDecoration(
               border: OutlineInputBorder(),
               labelText: "Tap to search",
               prefixIcon: Icon(Icons.search),
               suffixIcon: IconButton(
                 onPressed: () {
-                  BlocProvider.of<RealEstateBloc>(context)
-                      .add(ClearSearchFieldEvent());
+                  // TODO: Add clear search event to the bloc
                 },
                 icon: Icon(Icons.clear),
               ),
             ),
             onChanged: (content) {
-              BlocProvider.of<RealEstateBloc>(context)
-                  .add(GetSearchResultsEvent());
+              // TODO: add search event to the BLoC
             },
           ),
           Row(
@@ -39,22 +38,19 @@ class TopFilter extends StatelessWidget {
               ElevatedButton(
                 child: Text("All"),
                 onPressed: () {
-                  BlocProvider.of<RealEstateBloc>(context)
-                      .add(GetAllLandEvent());
+                  // TODO: Add get all land event to the bloc
                 },
               ),
               ElevatedButton(
                 child: Text("Buy"),
                 onPressed: () {
-                  BlocProvider.of<RealEstateBloc>(context)
-                      .add(GetLandForSaleEvent());
+                  // TODO: Add get land for sale event to the bloc
                 },
               ),
               ElevatedButton(
                 child: Text("Rent"),
                 onPressed: () {
-                  BlocProvider.of<RealEstateBloc>(context)
-                      .add(GetLandForRentEvent());
+                  // TODO: Add get land for rent to the bloc
                 },
               ),
             ],
